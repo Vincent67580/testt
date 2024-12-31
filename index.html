@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu verras en ouvrant ;)</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #0f0f2d; /* Arrière-plan sombre */
+            overflow: hidden; /* Empêche les débordements des effets */
+        }
+
+        .heart-container {
+            position: relative;
+        }
+
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transform: rotate(-45deg);
+            animation: heartbeat 1s infinite; /* Animation d'effet de battement */
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart:after {
+            top: 0;
+            left: 50px;
+        }
+
+        /* Halo lumineux autour du cœur */
+        .heart::after {
+            box-shadow: 0px  0px 10px 15px rgba(255, 0, 0, 0.5); /* Ajoute un effet lumineux rouge */
+        }
+
+        /* Particules animées */
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: particle-movement 2s infinite ease-in-out;
+        }
+
+        /* Génération de particules aléatoires */
+        .particle:nth-child(1) {
+            top: -50px;
+            left: 20px;
+            animation-delay: 0.2s;
+        }
+        .particle:nth-child(2) {
+            top: -80px;
+            left: 90px;
+            animation-delay: 0.4s;
+        }
+        .particle:nth-child(3) {
+            top: 20px;
+            left: 150px;
+            animation-delay: 0.6s;
+        }
+        .particle:nth-child(4) {
+            top: 80px;
+            left: -30px;
+            animation-delay: 0.8s;
+        }
+        .particle:nth-child(5) {
+            top: 100px;
+            left: 50px;
+            animation-delay: 1s;
+        }
+
+        /* Animation du cœur */
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1) rotate(-45deg); /* Taille normale */
+            }
+            50% {
+                transform: scale(1.2) rotate(-45deg); /* Agrandissement au battement */
+            }
+        }
+
+        /* Animation des particules */
+        @keyframes particle-movement {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(50px, -50px) scale(0.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart-container">
+        <div class="heart"></div>
+        <!-- Particules autour du cœur -->
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+</body>
+</html>
